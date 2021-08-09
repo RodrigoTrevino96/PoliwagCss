@@ -1,0 +1,36 @@
+@mixin salute-animation($name, $init-pos, $end-pos) {
+    @keyframes #{$name} {
+        0% {
+            transform: rotateZ(#{$init-pos}deg);
+        }
+        100% {
+            transform: rotateZ(#{$end-pos}deg);
+        }
+    }
+}
+
+@mixin bounce-animation($name, $property, $init-pos, $end-pos) {
+    @keyframes #{$name} {
+        0% {
+            #{$property}: #{$init-pos}px;
+        }
+        100% {
+            #{$property}: #{$end-pos}px;
+        }
+    }
+}
+
+@mixin blink-animation($name, $init-pos, $end-pos) {
+    @keyframes #{$name} {
+        0% {
+            height: #{$init-pos}px;
+        }
+        10% {
+            height: #{$end-pos}px;
+        }
+        15%,
+        100% {
+            height: #{$init-pos}px;
+        }
+    }
+}
